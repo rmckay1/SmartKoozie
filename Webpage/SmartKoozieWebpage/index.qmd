@@ -1,0 +1,17 @@
+---
+title: "SmartKoozieWebpage"
+---
+
+```{=html}
+<form action="http://localhost:5169/process" method="POST">
+    <fieldset>
+        <legend><strong>Enter the desired temperature for your Koozie! Please only enter a number from ## - ##</strong></legend>
+
+        <label for="desired_temp">Desired Temperature:</label>
+        <input type="number" name="user_desiredtemp" required>
+        <br><br>
+
+        <button type="submit">Submit</button>
+    </fieldset>
+</form>
+```
