@@ -1,0 +1,175 @@
+# Created by Ultra Librarian 8.3.366 Copyright © 1999-2024
+# Frank Frank, Accelerated Designs
+
+Grid mil;
+Set Wire_Bend 2;
+
+
+Edit 'RJE0020A.pac';
+Grid Mil;
+Layer 1;
+Smd '1' 23.622 7.874 -0 R0 (-55.1181 35.4331);
+Layer 1;
+Smd '2' 23.622 7.874 -0 R0 (-55.1181 17.7165);
+Layer 1;
+Smd '3' 23.622 7.874 -0 R0 (-55.1181 0);
+Layer 1;
+Smd '4' 23.622 7.874 -0 R0 (-55.1181 -17.7165);
+Layer 1;
+Smd '5' 23.622 7.874 -0 R0 (-55.1181 -35.4331);
+Layer 1;
+Smd '6' 23.622 7.874 -0 R90 (-35.4331 -55.1181);
+Layer 1;
+Smd '7' 23.622 7.874 -0 R90 (-17.7165 -55.1181);
+Layer 1;
+Smd '8' 23.622 7.874 -0 R90 (0 -55.1181);
+Layer 1;
+Smd '9' 23.622 7.874 -0 R90 (17.7165 -55.1181);
+Layer 1;
+Smd '10' 23.622 7.874 -0 R90 (35.4331 -55.1181);
+Layer 1;
+Smd '11' 23.622 7.874 -0 R180 (55.1181 -35.4331);
+Layer 1;
+Smd '12' 23.622 7.874 -0 R180 (55.1181 -17.7165);
+Layer 1;
+Smd '13' 23.622 7.874 -0 R180 (55.1181 0);
+Layer 1;
+Smd '14' 23.622 7.874 -0 R180 (55.1181 17.7165);
+Layer 1;
+Smd '15' 23.622 7.874 -0 R180 (55.1181 35.4331);
+Layer 1;
+Smd '16' 23.622 7.874 -0 R270 (35.4331 55.1181);
+Layer 1;
+Smd '17' 23.622 7.874 -0 R270 (17.7165 55.1181);
+Layer 1;
+Smd '18' 23.622 7.874 -0 R270 (0 55.1181);
+Layer 1;
+Smd '19' 23.622 7.874 -0 R270 (-17.7165 55.1181);
+Layer 1;
+Smd '20' 23.622 7.874 -0 R270 (-35.4331 55.1181);
+Layer 1;
+Smd '21' 30.5118 33.8583 -0 R0 NOCREAM (-2.3622 -.7087);
+Layer 21;
+Wire 8 (-65 65) (-57 65);
+Layer 21;
+Wire 8 (-65 49) (-65 65);
+Layer 21;
+Wire 8 (57 65) (65 65);
+Layer 21;
+Wire 8 (65 57) (65 65);
+Layer 21;
+Wire 8 (65 -65) (65 -57);
+Layer 21;
+Wire 8 (57 -65) (65 -65);
+Layer 21;
+Wire 8 (-65 -65) (-65 -57);
+Layer 21;
+Wire 8 (-65 -65) (-57 -65);
+Layer 21;
+Layer 51;
+Wire 6 (-61 -61) (61 -61);
+Layer 51;
+Wire 6 (-61 61) (61 61);
+Layer 51;
+Wire 6 (61 -61) (61 61);
+Layer 51;
+Wire 6 (-61 -61) (-61 61);
+Layer 51;
+Wire 4 (-31 36) -180 (-50 36);
+Wire 4 (-50 36) -180 (-31 36);
+Layer 31;
+Layer 31;
+Change Spacing 50;
+Change Pour solid;
+Polygon 1  (-14.9607 -12.8662) (-14.9607 11.4488) (-14.9219 11.8421) (-14.8072 12.2202) \
+    (-14.6209 12.5687) (-14.3702 12.8741) (-14.0648 13.1248) (-13.7163 13.3111) \
+    (-13.3382 13.4258) (-12.9449 13.4645) (8.2205 13.4645) (8.6138 13.4258) \
+    (8.9919 13.3111) (9.3404 13.1248) (9.6458 12.8741) (9.8965 12.5687) \
+    (10.0828 12.2202) (10.1975 11.8421) (10.2362 11.4488) (10.2362 -12.8662) \
+    (10.1975 -13.2595) (10.0828 -13.6376) (9.8965 -13.9861) (9.6458 -14.2915) \
+    (9.3404 -14.5422) (8.9919 -14.7285) (8.6138 -14.8432) (8.2205 -14.882) \
+    (-12.9449 -14.882) (-13.3382 -14.8432) (-13.7163 -14.7285) (-14.0648 -14.5422) \
+    (-14.3702 -14.2915) (-14.6209 -13.9861) (-14.8072 -13.6376) (-14.9219 -13.2595) (-14.9607 -12.8662);
+Layer 27;
+Change Size 50;
+Change Ratio 6;
+Text '>Value' SR0 (-68 -25);
+Change Size 50;
+Change Ratio 6;
+Text '>Name' SR0 (-129 -25);
+
+Edit 'TPS568230RJE.sym';
+Grid Mil;
+Layer 94;
+Pin 'BST' Pwr None Middle R180 Both 0 (800 700)
+Pin 'VIN_2' Pwr None Middle R0 Both 0 (-800 500)
+Pin 'VIN_3' Pwr None Middle R0 Both 0 (-800 400)
+Pin 'VIN_4' Pwr None Middle R0 Both 0 (-800 300)
+Pin 'VIN' Pwr None Middle R0 Both 0 (-800 200)
+Pin 'SW_2' Pwr None Middle R180 Both 0 (800 500)
+Pin 'PGND_2' Pwr None Middle R180 Both 0 (800 -500)
+Pin 'PGND_3' Pwr None Middle R180 Both 0 (800 -600)
+Pin 'PGOOD' OC None Middle R0 Both 0 (-800 -700)
+Pin 'NC_2' Pas None Middle R180 Both 0 (800 -100)
+Pin 'SS' In None Middle R0 Both 0 (-800 -100)
+Pin 'EN' In None Middle R0 Both 0 (-800 -300)
+Pin 'AGND' Pwr None Middle R180 Both 0 (800 -400)
+Pin 'FB' In None Middle R180 Both 0 (800 100)
+Pin 'MODE' In None Middle R0 Both 0 (-800 -500)
+Pin 'NC' Pas None Middle R180 Both 0 (800 -200)
+Pin 'VCC' Pwr None Middle R0 Both 0 (-800 700)
+Pin 'PGND_4' Pwr None Middle R180 Both 0 (800 -700)
+Pin 'SW_3' Pwr None Middle R180 Both 0 (800 400)
+Pin 'SW' Pwr None Middle R180 Both 0 (800 300)
+Pin 'PGND' Pwr None Middle R180 Both 0 (800 -800)
+Wire 8 (-600 -900) (600 -900);
+Wire 8 (600 -900) (600 900);
+Wire 8 (600 900) (-600 900);
+Wire 8 (-600 900) (-600 -900);
+Layer 97;
+Layer 95;
+Change Size 82;
+Change Ratio 6;
+Text '>Name' SR0 (-186 59);
+Layer 96;
+Change Size 82;
+Change Ratio 6;
+Text '>Value' SR0 (-211 -41);
+Layer 96;
+Change Size 82;
+Change Ratio 6;
+Text '>Value' SR0 (-211 -41);
+
+Edit 'TPS568230RJER.dev';
+Prefix 'U';
+Description '';
+Value Off;
+Add TPS568230RJE 'A' Next  0 (0 0);
+Package 'RJE0020A';
+Technology '';
+Attribute TYPE 'TYPE';
+Attribute RefDes 'RefDes';
+Attribute Copyright 'Copyright (C) 2025 Ultra Librarian. All rights reserved.';
+Attribute Mfr_Name 'Texas Instruments';
+Attribute Manufacturer_Part_Number 'TPS568230RJER';
+Connect 'A.BST' '1';
+Connect 'A.VIN_2' '2';
+Connect 'A.VIN_3' '3';
+Connect 'A.VIN_4' '4';
+Connect 'A.VIN' '5';
+Connect 'A.SW_2' '6';
+Connect 'A.PGND_2' '7';
+Connect 'A.PGND_3' '8';
+Connect 'A.PGOOD' '9';
+Connect 'A.NC_2' '10';
+Connect 'A.SS' '11';
+Connect 'A.EN' '12';
+Connect 'A.AGND' '13';
+Connect 'A.FB' '14';
+Connect 'A.MODE' '15';
+Connect 'A.NC' '16';
+Connect 'A.VCC' '17';
+Connect 'A.PGND_4' '18';
+Connect 'A.SW_3' '19';
+Connect 'A.SW' '20';
+Connect 'A.PGND' '21';
