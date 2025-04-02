@@ -1,0 +1,16 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "SmartKoozieWebpage",
+    "section": "",
+    "text": "Enter the desired temperature for your Koozie! Please only enter a number from ## - ##\n\n        Desired Temperature:\n        \n        \n\n        Submit"
+  }
+]
