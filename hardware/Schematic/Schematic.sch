@@ -797,6 +797,73 @@ DIN A3, landscape with location and doc. field</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="IRLZ44NPBF">
+<packages>
+<package name="TO254P1041X444X1930-3">
+<wire x1="-5.2075" y1="2.2225" x2="5.2075" y2="2.2225" width="0.127" layer="51"/>
+<wire x1="5.2075" y1="2.2225" x2="5.2075" y2="-2.2225" width="0.127" layer="51"/>
+<wire x1="5.2075" y1="-2.2225" x2="-5.2075" y2="-2.2225" width="0.127" layer="51"/>
+<wire x1="-5.2075" y1="-2.2225" x2="-5.2075" y2="2.2225" width="0.127" layer="51"/>
+<wire x1="-5.2075" y1="2.2225" x2="5.2075" y2="2.2225" width="0.127" layer="21"/>
+<wire x1="5.2075" y1="2.2225" x2="5.2075" y2="-2.2225" width="0.127" layer="21"/>
+<wire x1="5.2075" y1="-2.2225" x2="-5.2075" y2="-2.2225" width="0.127" layer="21"/>
+<wire x1="-5.2075" y1="-2.2225" x2="-5.2075" y2="2.2225" width="0.127" layer="21"/>
+<wire x1="-5.4575" y1="2.4725" x2="-5.4575" y2="-2.4725" width="0.05" layer="39"/>
+<wire x1="-5.4575" y1="-2.4725" x2="5.4575" y2="-2.4725" width="0.05" layer="39"/>
+<wire x1="5.4575" y1="-2.4725" x2="5.4575" y2="2.4725" width="0.05" layer="39"/>
+<wire x1="5.4575" y1="2.4725" x2="-5.4575" y2="2.4725" width="0.05" layer="39"/>
+<circle x="-5.9575" y="-0.81" radius="0.1" width="0.2" layer="21"/>
+<circle x="-5.9575" y="-0.81" radius="0.1" width="0.2" layer="51"/>
+<text x="-5.4575" y="3.4725" size="1.27" layer="25">&gt;NAME</text>
+<text x="-5.4575" y="-3.4725" size="1.27" layer="27" align="top-left">&gt;VALUE</text>
+<pad name="1" x="-2.54" y="-0.81" drill="1.23" shape="square"/>
+<pad name="2" x="0" y="-0.81" drill="1.23"/>
+<pad name="3" x="2.54" y="-0.81" drill="1.23"/>
+</package>
+</packages>
+<symbols>
+<symbol name="IRLZ44NPBF">
+<wire x1="-12.7" y1="5.08" x2="12.7" y2="5.08" width="0.41" layer="94"/>
+<wire x1="12.7" y1="5.08" x2="12.7" y2="-5.08" width="0.41" layer="94"/>
+<wire x1="12.7" y1="-5.08" x2="-12.7" y2="-5.08" width="0.41" layer="94"/>
+<wire x1="-12.7" y1="-5.08" x2="-12.7" y2="5.08" width="0.41" layer="94"/>
+<text x="-12.7" y="6.08" size="2.0828" layer="95" ratio="10" rot="SR0">&gt;NAME</text>
+<text x="-12.7" y="-9.08" size="2.0828" layer="96" ratio="10" rot="SR0">&gt;VALUE</text>
+<pin name="GATE" x="-17.78" y="2.54" length="middle" direction="in"/>
+<pin name="SOURCE" x="-17.78" y="-2.54" length="middle"/>
+<pin name="DRAIN" x="17.78" y="2.54" length="middle" direction="out" rot="R180"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="IRLZ44NPBF" prefix="U">
+<description> &lt;a href="https://pricing.snapeda.com/parts/IRLZ44NPBF/Infineon/view-part?ref=eda"&gt;Check availability&lt;/a&gt;</description>
+<gates>
+<gate name="G$1" symbol="IRLZ44NPBF" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="TO254P1041X444X1930-3">
+<connects>
+<connect gate="G$1" pin="DRAIN" pad="2"/>
+<connect gate="G$1" pin="GATE" pad="1"/>
+<connect gate="G$1" pin="SOURCE" pad="3"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="AVAILABILITY" value="In Stock"/>
+<attribute name="CHECK_PRICES" value="https://www.snapeda.com/parts/IRLZ44NPBF/Infineon/view-part/?ref=eda"/>
+<attribute name="DESCRIPTION" value="                                                      MOSFET, Power,N-Ch,VDSS 55V,RDS(ON) 0.022Ohm,ID 47A,TO-220AB,PD 110W,VGS +/-16V | Infineon IRLZ44NPBF                                              "/>
+<attribute name="MF" value="Infineon"/>
+<attribute name="MP" value="IRLZ44NPBF"/>
+<attribute name="PACKAGE" value="TO-220 Infineon"/>
+<attribute name="PRICE" value="None"/>
+<attribute name="SNAPEDA_LINK" value="https://www.snapeda.com/parts/IRLZ44NPBF/Infineon/view-part/?ref=snap"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -810,6 +877,7 @@ DIN A3, landscape with location and doc. field</description>
 <part name="J1" library="SparkFun-Connectors" deviceset="CONN_15" device=""/>
 <part name="J2" library="SparkFun-Connectors" deviceset="CONN_15" device=""/>
 <part name="FRAME1" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="A3L-LOC" device=""/>
+<part name="U1" library="IRLZ44NPBF" deviceset="IRLZ44NPBF" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -831,6 +899,10 @@ DIN A3, landscape with location and doc. field</description>
 <attribute name="LAST_DATE_TIME" x="364.49" y="55.88" size="2.286" layer="94"/>
 <attribute name="SHEET" x="377.825" y="50.8" size="2.54" layer="94"/>
 </instance>
+<instance part="U1" gate="G$1" x="137.16" y="243.84" smashed="yes">
+<attribute name="NAME" x="124.46" y="249.92" size="2.0828" layer="95" ratio="10" rot="SR0"/>
+<attribute name="VALUE" x="124.46" y="234.76" size="2.0828" layer="96" ratio="10" rot="SR0"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -847,6 +919,13 @@ DIN A3, landscape with location and doc. field</description>
 <pinref part="J2" gate="G$1" pin="15"/>
 <wire x1="228.6" y1="203.2" x2="233.68" y2="203.2" width="0.1524" layer="91"/>
 <label x="236.22" y="203.2" size="1.778" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="NANO" class="0">
+<segment>
+<pinref part="J1" gate="G$1" pin="1"/>
+<wire x1="180.34" y1="203.2" x2="175.26" y2="203.2" width="0.1524" layer="91"/>
+<label x="170.18" y="203.2" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
