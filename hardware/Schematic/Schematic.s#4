@@ -792,6 +792,13 @@ This footprint was designed to help hold the alignment of a through-hole compone
 <label x="127" y="93.98" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
+<net name="GETCORRECTDISTANCEFROMNANO" class="0">
+<segment>
+<pinref part="J1" gate="G$1" pin="12"/>
+<wire x1="86.36" y1="86.36" x2="101.6" y2="86.36" width="0.1524" layer="91"/>
+<label x="88.9" y="119.38" size="1.778" layer="95"/>
+</segment>
+</net>
 </nets>
 </sheet>
 </sheets>
