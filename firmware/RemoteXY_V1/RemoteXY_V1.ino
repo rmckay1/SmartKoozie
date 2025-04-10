@@ -28,7 +28,7 @@
 #include <BLEDevice.h>
 
 // RemoteXY connection settings 
-#define REMOTEXY_BLUETOOTH_NAME "RemoteXY"
+#define REMOTEXY_BLUETOOTH_NAME "Internal_LightTest"
 
 
 #include <RemoteXY.h>

@@ -28,7 +28,7 @@
 #include <BLEDevice.h>
 
 // RemoteXY connection settings 
-#define REMOTEXY_BLUETOOTH_NAME "RemoteXY"
+#define REMOTEXY_BLUETOOTH_NAME "SmartKoozie"
 
 
 #include <RemoteXY.h>
@@ -100,5 +100,5 @@ void loop()
     digitalWrite(4, LOW);    // Turn off MOSFET so the TEC OFF
   }
 
-  RemoteXY_delay(5000);  //Waits 5 seconds. Documents from the RemoteXY app says to use this function instead of the standard delay() function.
+  RemoteXY_delay(1500);  //Waits 5 seconds. Documents from the RemoteXY app says to use this function instead of the standard delay() function.
 }
