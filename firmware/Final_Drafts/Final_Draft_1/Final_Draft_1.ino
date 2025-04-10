@@ -28,27 +28,27 @@
 #include <BLEDevice.h>
 
 // RemoteXY connection settings 
-#define REMOTEXY_BLUETOOTH_NAME "SmartKoozie"
+#define REMOTEXY_BLUETOOTH_NAME "Smart Koozie"
 
 
 #include <RemoteXY.h>
 
 // RemoteXY GUI configuration  
 #pragma pack(push, 1)  
-uint8_t RemoteXY_CONF[] =   // 124 bytes
-  { 255,1,0,4,0,117,0,19,0,0,0,0,31,1,106,200,1,1,5,0,
-  10,39,89,24,24,48,4,26,31,79,78,0,31,79,70,70,0,129,6,6,
-  90,15,64,177,83,109,97,114,116,32,75,111,111,122,105,101,0,129,7,26,
-  85,9,64,13,67,117,114,114,101,110,116,32,84,101,109,112,101,114,97,116,
-  117,114,101,58,0,67,29,43,40,10,77,2,26,2,129,2,66,99,10,0,
-  8,67,111,111,108,32,121,111,117,114,32,75,111,111,122,105,101,32,119,105,
-  116,104,58,0 };
+uint8_t RemoteXY_CONF[] =   // 129 bytes
+  { 255,1,0,4,0,122,0,19,0,0,0,83,109,97,114,116,32,75,111,111,
+  122,105,101,0,31,1,106,200,1,1,5,0,129,7,26,85,9,64,13,67,
+  117,114,114,101,110,116,32,84,101,109,112,101,114,97,116,117,114,101,58,0,
+  67,29,43,40,10,77,2,26,2,129,9,62,87,8,0,8,84,117,114,110,
+  32,111,110,32,121,111,117,114,32,107,111,111,122,105,101,32,119,105,116,104,
+  0,129,70,43,10,10,64,6,194,176,70,0,2,29,76,44,22,0,106,30,
+  24,38,79,78,0,79,70,70,0 };
   
 // this structure defines all the variables and events of your control interface 
 struct {
 
     // input variables
-  uint8_t pushSwitch_01; // =1 if state is ON, else =0
+  uint8_t switch_01; // =1 if switch ON and =0 if OFF
 
     // output variables
   float current_temp_01;
@@ -64,6 +64,7 @@ struct {
 /////////////////////////////////////////////
 
 
+
 void setup() 
 {
   RemoteXY_Init(); 
@@ -71,6 +72,7 @@ void setup()
 
   pinMode(4, OUTPUT);         // D4 → controls MOSFET Gate
   digitalWrite(4, LOW);       // Ensure TEC is OFF at start
+  RemoteXY.switch_01 = 0;     // Makes sure switch is off by default.
 }
 
 void loop() 
@@ -83,6 +85,10 @@ void loop()
   float degreesC = (voltage - 0.5) * 100.0;
   float degreesF = degreesC * 9.0 / 5.0 + 32.0;
 
+  if (degreesF < 0){
+    degreesF = -1 * degreesF;
+  }
+
   //Prints to Serial Monitor, although this doesnt print anywhere becayse it is not connected to computer.
   Serial.print("Degrees C: ");
   Serial.print(degreesC);
@@ -94,11 +100,11 @@ void loop()
   RemoteXY.current_temp_01 = degreesF;
 
   // Control TEC via MOSFET using the app button
-  if (RemoteXY.pushSwitch_01 == 1) {
+  if (RemoteXY.switch_01 == 1) {
     digitalWrite(4, HIGH);   // Turn on MOSFET so the TEC ON
   } else {
     digitalWrite(4, LOW);    // Turn off MOSFET so the TEC OFF
   }
 
-  RemoteXY_delay(1500);  //Waits 5 seconds. Documents from the RemoteXY app says to use this function instead of the standard delay() function.
+  RemoteXY_delay(1000);  //Waits 1 seconds. Documents from the RemoteXY app says to use this function instead of the standard delay() function.
 }
