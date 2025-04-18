@@ -63,12 +63,6 @@ struct {
 //           END RemoteXY include          //
 /////////////////////////////////////////////
 
-#include <iostream>
-#include <list>
-using namespace std;
-list<float> temp_list = {};
-int sample_count = 0;
-float avg_temp_diff = 0;
 
 
 void setup() 
@@ -91,7 +85,8 @@ void loop()
   int raw = analogRead(A0);
   float voltage = raw * (3.3 / 4095.0);  // ESP32 ADC is 0–3.3V
   float degreesC = (voltage - 0.5) * 100.0;
-  float degreesF = degreesC * 9.0 / 5.0 + 32.0;
+  float degreesF = (degreesC * (9.0 / 5.0) + 32.0);
+  degreesF = degreesF + 38.9;
 
   if (degreesF < 0){
     degreesF = -1 * degreesF;
@@ -115,18 +110,6 @@ void loop()
     digitalWrite(4, LOW);    // Turn off MOSFET so the TEC OFF
   }
 
-/////////////// Collecting Data /////////////////
-
-  if(sample_count < 60){
-    temp_list.push_back(degreesF);
-    sample_count = sample_count + 1;
-  }
-  if(temp_list.size() >= 60){
-    for(int i : temp_list){
-      avg_temp_diff = avg_temp_diff + i; //At the end of the loop this would equal the sum of everything. 
-    }
-    avg_temp_diff = avg_temp_diff / temp_list.size(); //This makes it the average
-  }
 
   RemoteXY_delay(1000);  //Waits 1 seconds. Documents from the RemoteXY app says to use this function instead of the standard delay() function.
 }
