@@ -86,7 +86,6 @@ void loop()
   float voltage = raw * (3.3 / 4095.0);  // ESP32 ADC is 0–3.3V
   float degreesC = (voltage - 0.5) * 100.0;
   float degreesF = (degreesC * (9.0 / 5.0) + 32.0);
-  degreesF = degreesF + 38.9;
 
   if (degreesF < 0){
     degreesF = -1 * degreesF;
@@ -100,7 +99,7 @@ void loop()
   Serial.println(" °F");
 
   // Sends temperature to RemoteXY app
-  RemoteXY.current_temp_01 = degreesF;
+  RemoteXY.current_temp_01 = degreesF + 20;
 
 
   // Control TEC via MOSFET using the app button
