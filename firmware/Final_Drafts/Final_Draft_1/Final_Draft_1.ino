@@ -63,6 +63,8 @@ struct {
 //           END RemoteXY include          //
 /////////////////////////////////////////////
 
+int green = 9;
+int red = 8;
 
 
 void setup() 
@@ -73,6 +75,13 @@ void setup()
   pinMode(4, OUTPUT);         // D4 → controls MOSFET Gate
   digitalWrite(4, LOW);       // Ensure TEC is OFF at start
   RemoteXY.switch_01 = 0;     // Makes sure switch is off by default.
+
+  //LED Lights:
+  pinMode(green, OUTPUT);
+  pinMode(red, OUTPUT);
+
+  digitalWrite(green, LOW); //Green light
+  digitalWrite(red, HIGH); // Red light on by default
 
 
 }
@@ -87,16 +96,7 @@ void loop()
   float degreesC = (voltage - 0.5) * 100.0;
   float degreesF = (degreesC * (9.0 / 5.0) + 32.0);
 
-  if (degreesF < 0){
-    degreesF = -1 * degreesF;
-  }
 
-  //Prints to Serial Monitor, although this doesnt print anywhere becayse it is not connected to computer.
-  Serial.print("Degrees C: ");
-  Serial.print(degreesC);
-  Serial.print(" °C    Degrees F: ");
-  Serial.print(degreesF);
-  Serial.println(" °F");
 
   // Sends temperature to RemoteXY app
   RemoteXY.current_temp_01 = degreesF + 20;
@@ -105,8 +105,12 @@ void loop()
   // Control TEC via MOSFET using the app button
   if (RemoteXY.switch_01 == 1) {
     digitalWrite(4, HIGH);   // Turn on MOSFET so the TEC ON
+    digitalWrite(red, LOW); //red light off
+    digitalWrite(green, HIGH); //green light on
   } else {
     digitalWrite(4, LOW);    // Turn off MOSFET so the TEC OFF
+    digitalWrite(red, HIGH); //red light on
+    digitalWrite(green, LOW); //green light off.
   }
 
 
