@@ -2,7 +2,7 @@
 
 # 🧊 Smart Koozie
 
-Smart Koozie is a Bluetooth-enabled, drink-cooling device that lets users toggle a thermoelectric cooler from their phone using the RemoteXY mobile app. Built with an Arduino Nano ESP32 and a Peltier module, the system includes a temperature sensor to monitor the drink's temperature in real-time, while the RemoteXY interface provides a simple on/off control for cooling.
+Smart Koozie is a Bluetooth-enabled, drink-cooling koozie (beer sleeve) that lets users toggle a thermoelectric cooler from their phone using the RemoteXY mobile app. Built with an Arduino Nano ESP32 and a Peltier module, the system includes a temperature sensor to monitor the drink's temperature in real-time, while the RemoteXY interface provides a simple on/off control for cooling.
 
 ## 🔧 Features
 
