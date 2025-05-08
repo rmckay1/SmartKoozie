@@ -25,7 +25,7 @@ Smart Koozie is a Bluetooth-enabled, drink-cooling koozie (beer sleeve) that let
 - assets: contains the fusion 3d model of our SmartKoozie
 - docs: contains Deliverables, poster, license, and the proposal
 - firmware: contains the code we used to run and test parts also the app we used to connect with our hardware
-- hardware: contains the pcb schematic and the 3d model of the koozie
+- hardware: contains the pcb schematic, and the datasheets of some of the parts
 - receipts: contains all the purchases we made 
 
 
