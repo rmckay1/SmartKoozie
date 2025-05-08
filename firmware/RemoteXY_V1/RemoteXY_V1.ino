@@ -28,7 +28,7 @@
 #include <BLEDevice.h>
 
 // RemoteXY connection settings 
-#define REMOTEXY_BLUETOOTH_NAME "Internal_LightTest"
+#define REMOTEXY_BLUETOOTH_NAME "RemoteXY"
 
 
 #include <RemoteXY.h>
@@ -37,7 +37,7 @@
 #pragma pack(push, 1)  
 uint8_t RemoteXY_CONF[] =   // 37 bytes
   { 255,1,0,0,0,30,0,19,0,0,0,0,31,1,106,200,1,1,1,0,
-  10,43,33,24,24,48,4,26,31,79,78,0,31,79,70,70,0 };
+  10,29,63,43,43,48,4,26,31,79,78,0,31,79,70,70,0 };
   
 // this structure defines all the variables and events of your control interface 
 struct {
@@ -61,7 +61,7 @@ void setup()
 {
   RemoteXY_Init (); 
   
-  pinMode(LED_BUILTIN, OUTPUT);  
+  
   // TODO you setup code
   
 }
@@ -70,6 +70,7 @@ void loop()
 { 
   RemoteXY_Handler ();
   
+  
   if(RemoteXY.pushSwitch_01 == 1){
     digitalWrite(LED_BUILTIN, HIGH);
     Serial.println("It is on!");
@@ -77,11 +78,9 @@ void loop()
   else if (RemoteXY.pushSwitch_01 == 0) {
     digitalWrite(LED_BUILTIN, LOW);
     Serial.println("It is OFF!");
-
-  }
   // TODO you loop code
   // use the RemoteXY structure for data transfer
   // do not call delay(), use instead RemoteXY_delay() 
-
+  }
 
 }
